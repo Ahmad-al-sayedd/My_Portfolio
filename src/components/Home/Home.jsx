@@ -23,7 +23,7 @@ const Home = () => {
           </p>
         </article>
       
-         <img src={Header}alt="coding-img"/>
+         <img className='homeImg' src={Header}alt="coding-img"/>
       </section>
     
   )
