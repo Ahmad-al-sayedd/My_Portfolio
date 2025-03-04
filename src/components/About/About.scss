@@ -1,0 +1,201 @@
+@use "../../App.scss" as c;  // Import styles from App.scss
+
+.main-aboutMe {
+  z-index: 1;
+
+  h2 {
+    font-size: 2rem;
+    text-align: start;
+    color: c.$secondary-color;
+    text-shadow: 2px 1px 2px c.$primary-color;
+    letter-spacing: 0.3rem;
+    padding: 2rem;
+    border-top: 2px solid c.$primary-color;
+  }
+
+  article {
+    @include c.flex; // Ensure %flex is defined in App.scss
+    justify-content: space-around;
+    padding-top: 1rem;
+
+    p {
+      width: 50%;
+      padding-top: 2rem;
+      text-align: justify;
+      line-height: 2rem;
+    }
+
+    .main-skills {
+      width: 40%;
+      padding-top: 3rem;
+      text-align: center;
+      border-radius: 1rem;
+      backdrop-filter: blur(6px) saturate(180%);
+      background-color: rgba(17, 25, 40, 0.75);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.125);
+      margin-top: 2rem;
+
+      h3 {
+        letter-spacing: 1.5px;
+      }
+
+      ul {
+        @include c.flex;
+        flex-direction: column;
+        padding: 2rem 0;
+
+        li {
+          font-weight: bold;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 65%;
+          padding-top: 1rem;
+
+          span {
+            background-color: rgb(255, 255, 255);
+            display: inline-block;
+            width: 20rem;
+            height: 10px;
+            border-radius: 10px;
+            margin-left: 1rem;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              background: linear-gradient(
+                90deg,
+                rgba(27, 214, 218, 1) 0%,
+                rgba(75, 239, 242, 1) 0%,
+                rgba(3, 230, 242, 1) 81%,
+                rgba(249, 249, 249, 1) 100%
+              );
+              top: 0;
+              left: 0;
+              height: 100%;
+              border-radius: 10px;
+            }
+
+            // Skill progress bar percentages
+            &.progress-70::after {
+              width: 70%;
+            }
+            &.progress-50::after {
+              width: 50%;
+            }
+            &.progress-60::after {
+              width: 60%;
+            }
+            &.progress-40::after {
+              width: 40%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+ 
+  
+      .main-aboutMe{
+          h2{
+              font-size: 1.5rem;
+              padding: 1rem;
+          }
+          article{
+              flex-direction: column;
+           
+              p{
+                  width: 50%;
+                  text-align: center;
+                  width: 100%;
+                
+                  
+              }
+              .main-skills{
+                  width: 100%;
+                  margin-top: 2rem;
+                  ul{
+                      li{
+                        width: 90%;
+                        margin: 0 auto;
+                          span{
+                              width: 10rem;
+                          }
+                      }
+                  }
+              }
+          }
+        }
+  
+
+
+      }
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .main-aboutMe {
+    z-index: 10;
+
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: c.$secondary-color;
+      text-shadow: 5px 1px 2px c.$primary-color;
+      letter-spacing: 0.3rem;
+      padding: 2rem;
+      border-top: 2px solid c.$secondary-color;
+    }
+
+    article {
+      @include c.flex;
+      justify-content: space-around;
+      padding-top: 1rem;
+      flex-direction: column;
+
+      p {
+        width: 100%;
+        padding-top: 2rem;
+        text-align: justify;
+        line-height: 2rem;
+      }
+    }
+
+    .main-skills {
+      width: 100% !important;
+      margin-top: 2rem;
+
+      ul {
+        li {
+          span {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,8 @@
-@import '../../App.scss';  // Going up two levels to access App.scss
+@use '../../App.scss'as c;  // Going up two levels to access App.scss
 
 .header-content {
   overflow: hidden;
-  @include widthMargin(95%, auto);
+  @include c.widthMargin(95%, auto);
   display: grid;
   grid-template-columns: 0.2fr 0.1fr 0.5fr 0.2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -17,7 +17,7 @@
     h1 {
       width: 100%;
       font-size: 1.5rem;
-      color: $primary-color;
+      color: c.$primary-color;
       letter-spacing: 4px;
       animation-name: h1;
       animation-duration: 1.5s;
@@ -38,7 +38,7 @@
         color: black;
         font-size: 4rem;
         letter-spacing: 10px;
-        text-shadow: 3px 1px 2px $primary-color;
+        text-shadow: 3px 1px 2px c.$primary-color;
         font-family: "Sofadi One", system-ui;
         font-weight: bold;
         font-style: normal;
@@ -59,7 +59,7 @@
               color: black;
             }
             100% {
-              color: $secondary-color;
+              color: c.$secondary-color;
               opacity: 1;
             }
           }
@@ -68,7 +68,7 @@
     }
 
     p {
-      color: $primary-color;
+      color: c.$primary-color;
       padding-top: 1rem;
       font-size: 1.1rem;
       animation-name: Parg;
@@ -123,7 +123,7 @@
 @media screen and (max-width: 768px) {
     .header-content {
       overflow: hidden;
-      @include widthMargin(95%, auto);
+      @include c.widthMargin(95%, auto);
       display: flex;
       flex-direction: column;
       align-items: center;  // Center everything in the column layout
@@ -142,7 +142,7 @@
   
         h1 {
           font-size: 1.5rem;
-          color: $primary-color;
+          color: c.$primary-color;
           letter-spacing: 1.5px;
           animation-name: h1;
           animation-duration: 1.5s;
@@ -162,15 +162,15 @@
           }
   
           & span {
-            color: $secondary-color;
+            color: c.$secondary-color;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            text-shadow: 3px 1px 2px $primary-color;
+            text-shadow: 3px 1px 2px c.$primary-color;
           }
         }
   
         p {
-          color: $primary-color;
+          color: c.$primary-color;
           padding-top: 1.5rem;
           font-size: 1.1rem;
           animation-name: Parg;
@@ -223,7 +223,7 @@
   @media screen and (min-width: 769px) and (max-width: 1200px) {
     .header-content {
       overflow: hidden;
-      @include widthMargin(95%, auto);
+      @include c.widthMargin(95%, auto);
       display: grid;
       grid-template-columns: 0.2fr 0.5fr 0.2fr 1fr;
       grid-template-rows: 0.7fr 1fr;
@@ -238,7 +238,7 @@
         h1 {
           width: 100%;
           font-size: 1.2rem;
-          color: $primary-color;
+          color: c.$primary-color;
           letter-spacing: 4px;
           animation-name: h1;
           animation-duration: 1.5s;

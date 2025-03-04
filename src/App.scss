@@ -67,7 +67,7 @@ $primary-color: #ffffffea;
 $secondary-color: #32e7ff;
 $background-color: #000000;
   
-  %flex {
+  @mixin flex {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,7 +81,7 @@ $background-color: #000000;
     background-color: red;
     border-radius: 4px;
     position: fixed;
-    @extend %flex;
+    @include flex;
     right: 10px;
   
     display: inline;
@@ -139,4 +139,10 @@ $background-color: #000000;
      
     }
   }
-  
+  main{
+    @include flex;
+    flex-direction: column;
+    color: white;
+    padding-top: 7rem;
+    @include widthMargin(95%, auto);
+  }

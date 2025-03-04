@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  background-image: url(./assets/Secondbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  animation-name: imagesChanges;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-delay: 5.5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* variables.scss */
+.main-aboutMe article .main-skills ul, .main-aboutMe article, main, .scrollUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollUp {
+  background-color: red;
+  border-radius: 4px;
+  position: fixed;
+  right: 10px;
+  display: inline;
+  z-index: 10;
+  bottom: 10px;
+  background-color: #32e7ff;
+  opacity: 0.1;
+  padding: 1.5rem 2rem;
+  transition: all 0.5s ease;
+}
+.scrollUp i {
+  font-size: 1.5rem;
+}
+.scrollUp:hover {
+  opacity: 1;
+  box-shadow: 2px 2px 12px 2px rgb(247, 247, 247);
+}
+.scrollUp:hover i {
+  animation-name: scrollUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+main {
+  flex-direction: column;
+  color: white;
+  padding-top: 7rem;
+  width: 95%;
+  margin: auto;
+}
+
+.main-aboutMe {
+  z-index: 1;
+}
+.main-aboutMe h2 {
+  font-size: 2rem;
+  text-align: start;
+  color: #32e7ff;
+  text-shadow: 2px 1px 2px rgba(255, 255, 255, 0.9176470588);
+  letter-spacing: 0.3rem;
+  padding: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.9176470588);
+}
+.main-aboutMe article {
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+.main-aboutMe article p {
+  width: 50%;
+  padding-top: 2rem;
+  text-align: justify;
+  line-height: 2rem;
+}
+.main-aboutMe article .main-skills {
+  width: 40%;
+  padding-top: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+  -webkit-backdrop-filter: blur(6px) saturate(180%);
+          backdrop-filter: blur(6px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  margin-top: 2rem;
+}
+.main-aboutMe article .main-skills h3 {
+  letter-spacing: 1.5px;
+}
+.main-aboutMe article .main-skills ul {
+  flex-direction: column;
+  padding: 2rem 0;
+}
+.main-aboutMe article .main-skills ul li {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65%;
+  padding-top: 1rem;
+}
+.main-aboutMe article .main-skills ul li span {
+  background-color: rgb(255, 255, 255);
+  display: inline-block;
+  width: 20rem;
+  height: 10px;
+  border-radius: 10px;
+  margin-left: 1rem;
+  position: relative;
+}
+.main-aboutMe article .main-skills ul li span::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, rgb(27, 214, 218) 0%, rgb(75, 239, 242) 0%, rgb(3, 230, 242) 81%, rgb(249, 249, 249) 100%);
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 10px;
+}
+.main-aboutMe article .main-skills ul li span.progress-70::after {
+  width: 70%;
+}
+.main-aboutMe article .main-skills ul li span.progress-50::after {
+  width: 50%;
+}
+.main-aboutMe article .main-skills ul li span.progress-60::after {
+  width: 60%;
+}
+.main-aboutMe article .main-skills ul li span.progress-40::after {
+  width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .main-aboutMe h2 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  .main-aboutMe article {
+    flex-direction: column;
+  }
+  .main-aboutMe article p {
+    width: 50%;
+    text-align: center;
+    width: 100%;
+  }
+  .main-aboutMe article .main-skills {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .main-aboutMe article .main-skills ul li {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .main-aboutMe article .main-skills ul li span {
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+  .main-aboutMe {
+    z-index: 10;
+  }
+  .main-aboutMe h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #32e7ff;
+    text-shadow: 5px 1px 2px rgba(255, 255, 255, 0.9176470588);
+    letter-spacing: 0.3rem;
+    padding: 2rem;
+    border-top: 2px solid #32e7ff;
+  }
+  .main-aboutMe article {
+    justify-content: space-around;
+    padding-top: 1rem;
+    flex-direction: column;
+  }
+  .main-aboutMe article p {
+    width: 100%;
+    padding-top: 2rem;
+    text-align: justify;
+    line-height: 2rem;
+  }
+  .main-aboutMe .main-skills {
+    width: 100% !important;
+    margin-top: 2rem;
+  }
+  .main-aboutMe .main-skills ul li span {
+    width: 100%;
+  }
+}/*# sourceMappingURL=About.css.map */

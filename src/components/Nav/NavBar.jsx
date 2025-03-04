@@ -1,4 +1,5 @@
 import Logo from '../../assets/Logo.png'; // Going up two levels to access assets
+
 import '../Nav/Nav.scss'
 const NavBar = () => {
   return (

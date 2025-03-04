@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  background-image: url(./assets/Secondbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  animation-name: imagesChanges;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  animation-delay: 5.5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* variables.scss */
+.header-nav ul, main, .scrollUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollUp {
+  background-color: red;
+  border-radius: 4px;
+  position: fixed;
+  right: 10px;
+  display: inline;
+  z-index: 10;
+  bottom: 10px;
+  background-color: #32e7ff;
+  opacity: 0.1;
+  padding: 1.5rem 2rem;
+  transition: all 0.5s ease;
+}
+.scrollUp i {
+  font-size: 1.5rem;
+}
+.scrollUp:hover {
+  opacity: 1;
+  box-shadow: 2px 2px 12px 2px rgb(247, 247, 247);
+}
+.scrollUp:hover i {
+  animation-name: scrollUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  30% {
+    transform: translateY(0px);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+main {
+  flex-direction: column;
+  color: white;
+  padding-top: 7rem;
+  width: 95%;
+  margin: auto;
+}
+
+.header-nav {
+  padding: 0.9rem;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.header-nav img {
+  width: 100px;
+  animation: 3s img infinite;
+}
+@keyframes img {
+  0% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+  40% {
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+    filter: drop-shadow(0px 0px 5px rgba(218, 228, 224, 0.8));
+  }
+  50% {
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: perspective(400px) scale3d(0.95, 0.95, 0.95);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: perspective(400px);
+    animation-timing-function: ease-in;
+  }
+}
+.header-nav :hover {
+  animation: 0s img forwards;
+}
+
+.header-nav ul {
+  z-index: 1;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.header-nav ul li {
+  padding: 0.5rem 1rem;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  border: 1px solid transparent;
+}
+.header-nav ul li a {
+  color: rgba(255, 255, 255, 0.9176470588);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header-nav ul li:hover {
+  background-color: #32e7ff;
+  box-shadow: 1px 2px 10px 1px rgba(255, 255, 255, 0.9176470588);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.9176470588);
+}
+.header-nav ul li:hover a {
+  color: black;
+}
+
+i {
+  font-size: 1.5rem;
+  padding-right: 1rem;
+  visibility: hidden;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .header-nav {
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    /* Mobile menu toggle behavior */
+  }
+  .header-nav img {
+    width: 80px;
+  }
+  .header-nav .menu-toggle:checked + .menu-icon + ul {
+    top: 100%;
+    transition: all 1s ease;
+    z-index: 10;
+  }
+  /* Header navigation links */
+  .header-nav ul {
+    z-index: 1;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: -350%;
+    left: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 1s ease;
+    z-index: 110;
+    padding: 1rem 0;
+  }
+  .header-nav ul li {
+    width: 90%;
+    text-align: center;
+  }
+  .header-nav ul li a {
+    color: rgba(255, 255, 255, 0.9176470588);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}/*# sourceMappingURL=Nav.css.map */
