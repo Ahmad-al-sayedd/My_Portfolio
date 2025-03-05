@@ -35,8 +35,12 @@ footer {
           scale: 1.5;
         }
       }
-      a:hover i {
+      a svg{
+        padding: 0.4rem;
+      }
+      a:hover svg{
         animation: 1s contactsIcon forwards;
+  
       }
   
       @keyframes contactsIcon {
@@ -52,6 +56,7 @@ footer {
   
         100% {
           rotate: 360deg;
+     
         }
       }
     }
