@@ -35,7 +35,7 @@ const projects = [
   
   export default function Projects() {
     return (
-      <section id="Projects" className="main-projects">
+      <section id="Projects" className="projects">
         <h2>Projects</h2>
         {projects.map((project, index) => (
           <article key={index}>

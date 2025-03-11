@@ -1,7 +1,10 @@
 @use "../../App.scss" as c;  // Import styles from App.scss
 
-.main-aboutMe {
+.aboutMe {
   z-index: 1;
+  // height: 100vh;
+  
+
 
   h2 {
     font-size: 2rem;
@@ -14,52 +17,100 @@
   }
 
   article {
-    @include c.flex; // Ensure %flex is defined in App.scss
+    @include c.flex;
     justify-content: space-around;
     padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    
 
     p {
-      width: 50%;
+      width: 70%;
       padding-top: 2rem;
       text-align: justify;
       line-height: 2rem;
+      color: white;
     }
 
-    .main-skills {
-      width: 40%;
+    .skills-container{
+     
+      width: 90%;
+    }
+
+    .skills {
+     
+      width: 100%;
       padding-top: 3rem;
+      display: flex;
+      flex-direction: column;
+    align-items: center;
+    justify-content: center;
       text-align: center;
       border-radius: 1rem;
-      backdrop-filter: blur(6px) saturate(180%);
       background-color: rgba(17, 25, 40, 0.75);
       border-radius: 12px;
       border: 1px solid rgba(255, 255, 255, 0.125);
       margin-top: 2rem;
-
+    
+      margin: 2rem auto;
+  
+  
+   
       h3 {
         letter-spacing: 1.5px;
+        color: white;
       }
 
       ul {
         @include c.flex;
-        flex-direction: column;
+        
         padding: 2rem 0;
+        width:100%;
+     
+    
+        display: flex;
+        align-items: self-start;
+        // gap: 8rem;
+        justify-content: space-evenly;
+        
+        
+    .skills-ul{
+      width: 30%;
+     ;
+      
+     
+           padding: 0 0.3rem;
+     
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+
+    }
+     
 
         li {
+        
+     
           font-weight: bold;
           display: flex;
+        
           justify-content: space-between;
           align-items: center;
-          width: 65%;
+          width:100%;
           padding-top: 1rem;
-
+          color:  white;
+       
+       
           span {
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(226, 232, 226);
             display: inline-block;
-            width: 20rem;
+            width: 15rem !important;
             height: 10px;
             border-radius: 10px;
             margin-left: 1rem;
+            margin-right: 0.5rem;
             position: relative;
 
             &::after {
@@ -78,7 +129,6 @@
               border-radius: 10px;
             }
 
-            // Skill progress bar percentages
             &.progress-70::after {
               width: 70%;
             }
@@ -98,104 +148,196 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 768px) {
-
- 
-  
-      .main-aboutMe{
-          h2{
-              font-size: 1.5rem;
-              padding: 1rem;
-          }
-          article{
-              flex-direction: column;
-           
-              p{
-                  width: 50%;
-                  text-align: center;
-                  width: 100%;
-                
-                  
-              }
-              .main-skills{
-                  width: 100%;
-                  margin-top: 2rem;
-                  ul{
-                      li{
-                        width: 90%;
-                        margin: 0 auto;
-                          span{
-                              width: 10rem;
-                          }
-                      }
-                  }
-              }
-          }
-        }
-  
-
-
-      }
-
-
-
-
-
-
-
-
-
-
-@media screen and (min-width: 769px) and (max-width: 1200px) {
-  .main-aboutMe {
-    z-index: 10;
-
+  .aboutMe {
     h2 {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      padding: 1rem;
       text-align: center;
-      color: c.$secondary-color;
-      text-shadow: 5px 1px 2px c.$primary-color;
-      letter-spacing: 0.3rem;
-      padding: 2rem;
-      border-top: 2px solid c.$secondary-color;
+      
     }
-
     article {
-      @include c.flex;
-      justify-content: space-around;
-      padding-top: 1rem;
       flex-direction: column;
-
       p {
+        text-align:center;
         width: 100%;
-        padding-top: 2rem;
-        text-align: justify;
-        line-height: 2rem;
+        font-size: 0.7rem;
+
       }
+      .skills {
+        width: 95%;
+        margin-top: 2rem;
+       
+        
+        ul {
+          padding: 1rem;
+                
+    .skills-ul{
+      width: 100%;
+     
+      padding: 0 0.3rem;
+      background-color: rgba(128, 128, 128, 0.1); // Grey with transparency
+      border: 1px solid rgba(255, 255, 255, 0.125);
     }
+     
+          li {
+           
+            width: 90%;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            span {
+              width: 10rem;
+              
+            }
 
-    .main-skills {
-      width: 100% !important;
-      margin-top: 2rem;
+            span {
+              background-color: rgb(226, 232, 226);
+              display: inline-block;
+              width: 80% !important;
+              height: 6px;
+              border-radius: 10px;
+              margin-left: 1rem;
+             
+              position: relative;
+              display: none;
+              &::after {
+                content: "";
+                position: absolute;
+                background: linear-gradient(
+                  90deg,
+                  rgba(27, 214, 218, 1) 0%,
+                  rgba(75, 239, 242, 1) 0%,
+                  rgba(3, 230, 242, 1) 81%,
+                  rgba(249, 249, 249, 1) 100%
+                );
+                top: 0;
+                left: 0;
+                height: 100%;
+                border-radius: 10px;
+              }
+  
+              &.progress-70::after {
+                width: 70%;
+              }
+              &.progress-50::after {
+                width: 50%;
+              }
+              &.progress-60::after {
+                width: 60%;
+              }
+              &.progress-40::after {
+                width: 40%;
+              }
+            }
 
-      ul {
-        li {
-          span {
-            width: 100%;
+
+
           }
         }
       }
     }
   }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1900px) {
+  .aboutMe {
+    h2 {
+      font-size: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      
+    }
+    article {
+      flex-direction: column;
+      p {
+        text-align:center;
+        width: 100%;
+        font-size: 1.3rem;
+
+      }
+      .skills {
+        width: 95%;
+        margin-top: 2rem;
+       
+        
+        ul {
+          padding: 1rem;
+          gap:1.3rem;
+                
+    .skills-ul{
+      width: 50%;
+     
+      
+      padding: 0 0.3rem;
+      background-color: rgba(128, 128, 128, 0.1); // Grey with transparency
+      border: 1px solid rgba(255, 255, 255, 0.125);
+    }
+     
+          li {
+           
+            width: 90%;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+            span {
+              width: 10rem;
+              
+            }
+
+            span {
+              background-color: rgb(226, 232, 226);
+              display: inline-block;
+              width: 80% !important;
+              height: 6px;
+              border-radius: 10px;
+              margin-left: 1rem;
+             
+              position: relative;
+              
+              &::after {
+                content: "";
+                position: absolute;
+                background: linear-gradient(
+                  90deg,
+                  rgba(27, 214, 218, 1) 0%,
+                  rgba(75, 239, 242, 1) 0%,
+                  rgba(3, 230, 242, 1) 81%,
+                  rgba(249, 249, 249, 1) 100%
+                );
+                top: 0;
+                left: 0;
+                height: 100%;
+                border-radius: 10px;
+              }
+  
+              &.progress-70::after {
+                width: 70%;
+              }
+              &.progress-50::after {
+                width: 50%;
+              }
+              &.progress-60::after {
+                width: 60%;
+              }
+              &.progress-40::after {
+                width: 40%;
+              }
+            }
+
+
+
+          }
+        }
+      }
+    }
+  }
+  
+ 
 }
