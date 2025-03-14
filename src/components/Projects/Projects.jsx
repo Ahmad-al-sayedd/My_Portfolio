@@ -1,58 +1,92 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules"; // Import Autoplay module
+import { motion } from "framer-motion"; // Import motion for animations
+import "swiper/css";
+import "swiper/css/autoplay";
+import "./Projects.scss";
 
-import "./Projects.scss"
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { useState } from "react";
+import { projects } from "./ProjectsData";
 
 
-const projects = [
-    {
-      imgSrc: "./images/Screenshot from 2024-09-24 10-50-24.png",
-      altText: "project",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, hic iure! Laborum, explicabo accusamus! Minima blanditiis fugiat eum veniam doloremque!",
-      link: "https://github.com/Ahmad-al-sayedd",
-    },
-    {
-      imgSrc: "./images/Screenshot from 2024-09-23 13-02-25.png",
-      altText: "Pojectimg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, hic iure! Laborum, explicabo accusamus! Minima blanditiis fugiat eum veniam doloremque!",
-      link: "https://github.com/Ahmad-al-sayedd",
-    },
-    {
-      imgSrc: "./images//Screenshot from 2024-09-23 13-46-54.png",
-      altText: "Pojectimg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, hic iure! Laborum, explicabo accusamus! Minima blanditiis fugiat eum veniam doloremque!",
-      link: "https://github.com/Ahmad-al-sayedd",
-    },
-    {
-      imgSrc: "./images/Screenshot from 2024-09-23 13-08-25.png",
-      altText: "Pojectimg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, hic iure! Laborum, explicabo accusamus! Minima blanditiis fugiat eum veniam doloremque!",
-      link: "https://github.com/Ahmad-al-sayedd",
-    },
-  ];
-  
-  export default function Projects() {
-    return (
-      <section id="Projects" className="projects">
-        <h2>Projects</h2>
+export default function Projects() {
+  const [stylingDescriptionIndex, setStylingDescriptionIndex] = useState(null);
+
+  const handleOpenTHeDescription = (index) => {
+    setStylingDescriptionIndex(stylingDescriptionIndex === index ? null : index);
+  };
+
+  return (
+    <section id="Projects" className="projects">
+      <motion.h2 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+        Projects
+      </motion.h2>
+
+      <Swiper
+        modules={[Autoplay]} 
+        spaceBetween={30} 
+        slidesPerView={1} 
+        loop={true} 
+        freeMode={true} 
+        speed={5000} 
+        autoplay={{
+          delay: 0, // Auto slide every 3 seconds
+          disableOnInteraction: false,
+          pauseOnMouseEnter:true // Keep autoplay after interaction
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2
+          },
+          1024: {
+            slidesPerView: 3
+          }
+        }}
+      >
         {projects.map((project, index) => (
-          <article key={index}>
-            <figure>
-              <img src={project.imgSrc} alt={project.altText} />
-            </figure>
-            <div>
-              <p>{project.description}</p>
-              <button>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  More Infos
-                </a>
-              </button>
-            </div>
-          </article>
+          <SwiperSlide key={index}>
+            <motion.article initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5, delay: index * 0.3 }}>
+              <h1 style={{ color: "white", padding: "1rem 0rem" }}>{project.title}</h1>
+              <figure>
+                <motion.img
+                  src={project.imgSrc}
+                  alt={project.altText}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </figure>
+
+              <motion.button
+                onClick={() => handleOpenTHeDescription(index)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.2 }}
+              >
+                <MdKeyboardArrowUp
+                  style={{
+                    color: "white",
+                    fontSize: "20px",
+                    fontWeight: "bold",
+                    transform: stylingDescriptionIndex === index ? "rotate(180deg)" : "rotate(0deg)",
+                    transition: "transform 0.3s ease",
+                  }}
+                />
+              </motion.button>
+
+              <section className={stylingDescriptionIndex == index ? "sectionOfDescription-active" : "sectionOfDescription"}>
+                <div>
+                  <p>{project.description}</p>
+                  <a target="_blank" href={project.Gitlink}>Github Page</a>
+                  <a target="_blank" href={project.DemoLink === "Not Available" ? "#" : project.DemoLink}>
+                    {project.DemoLink === "Not Available" ? "Not Available" : "Go To Website"}
+                  </a>
+                </div>
+              </section>
+            </motion.article>
+          </SwiperSlide>
         ))}
-      </section>
-    );
-  }
-  
+      </Swiper>
+    </section>
+  );
+}

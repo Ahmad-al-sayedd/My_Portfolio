@@ -38,7 +38,7 @@ const About = () => {
           I bring creativity and technical expertise to the world of web
           development, helping to create functional, visually appealing, and
           user-friendly websites. My role involves using programming languages
-          such as <strong>HTML, CSS, JavaScript, and React</strong> to craft interactive web pages,
+          such as <strong>HTML5, CSS3, JavaScript, React, React-router, React-hooks and Express</strong> to craft interactive web pages,
           ensuring they are both responsive and optimized for performance. I have
           a deep understanding of both front-end and back-end development,
           enabling me to build everything from simple static sites to complex web

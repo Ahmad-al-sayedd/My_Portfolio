@@ -230,8 +230,7 @@
       @include c.widthMargin(95%, auto);
       display: grid;
       grid-template-columns: 0.2fr 0.5fr 0.2fr 1fr;
-      grid-template-rows: 0.7fr 1fr;
-     
+      grid-template-rows: 0.7fr 1fr ;
   
       .header-content-article {
         grid-column: 1/2;
