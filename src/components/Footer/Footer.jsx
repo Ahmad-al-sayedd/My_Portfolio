@@ -35,7 +35,10 @@ const Footer = () => {
           </a>
         </section>
         <p>
-          Contact me: <a href="tel:+49567890760">+49 567-890-760</a>
+          Contact me  <a href="tel:+49567890760">+49 567-890-760</a>
+        </p>
+        <p>
+        Email <a href="mailto:ahmadsayed1lb@gmail.com">ahmadsayed1lb@gmail.com</a>
         </p>
       </footer>
     );

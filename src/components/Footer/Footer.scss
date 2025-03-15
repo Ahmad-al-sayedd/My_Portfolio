@@ -1,13 +1,10 @@
 @use '../../App.scss' as c;
 
-
-
-
 footer {
     position: relative;
     @include c.widthMargin(95%, auto);
     @include c.flex;
-    padding: 1.5rem 0;
+    // padding: 1.5rem 0;
     flex-direction: column;
     color: white;
     z-index: 1;
@@ -16,57 +13,127 @@ footer {
     -webkit-backdrop-filter: blur(1px) saturate(180%);
     background-color: rgba(17, 25, 40, 0.75);
     border-radius: 12px;
+
     section {
-      z-index: 1000000;
-      padding: 1rem 1rem;
-      @include c.flex;
-      gap: 2rem;
-      a {
-        transition: all 0.5s ease;
-        i {
-          font-size: 1.5rem;
-  
-          padding: 0.4rem;
-          text-shadow: 1px 1px 1px black;
-          rotate: 0;
+        z-index: 1000000;
+        padding: 0.5rem 0rem;
+        @include c.flex;
+        gap: 2rem;
+
+        a {
+            transition: all 0.5s ease;
+
+            i {
+                font-size: 1.5rem;
+                padding: 0.4rem;
+                text-shadow: 1px 1px 1px black;
+                rotate: 0;
+            }
+
+            &:hover {
+                box-shadow: 1px 1px 10px rgb(247, 247, 247);
+                scale: 1.5;
+            }
         }
-        &:hover {
-          box-shadow: 1px 1px 10px rgb(247, 247, 247);
-          scale: 1.5;
+
+        a svg {
+            padding: 0.4rem;
         }
-      }
-      a svg{
-        padding: 0.4rem;
-      }
-      a:hover svg{
-        animation: 1s contactsIcon forwards;
-  
-      }
-  
-      @keyframes contactsIcon {
-        0% {
-          text-shadow: 1px 1px 1px black;
-  
-          rotate: 0;
+
+        a:hover svg {
+            animation: 1s contactsIcon forwards;
         }
-  
-        60% {
-          rotate: 360deg;
+
+        @keyframes contactsIcon {
+            0% {
+                text-shadow: 1px 1px 1px black;
+                rotate: 0;
+            }
+
+            60% {
+                rotate: 360deg;
+            }
+
+            100% {
+                rotate: 360deg;
+            }
         }
-  
-        100% {
-          rotate: 360deg;
+    }
+
+    p {
+        font-size: 0.7rem;
+        margin-top: 0.3rem;
+
+        a {
+            color: c.$secondary-color;
+            margin-left: 0.5rem;
+             
+        }
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 768px) {
      
-        }
+footer {
+  position: relative;
+  @include c.widthMargin(95%, auto);
+  @include c.flex;
+  // padding: 0.5rem 0;
+  flex-direction: column;
+  color: white;
+  z-index: 1;
+  border-radius: 1rem;
+  backdrop-filter: blur(6px) saturate(180%);
+  -webkit-backdrop-filter: blur(1px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.75);
+  border-radius: 12px;
+
+  section {
+      z-index: 1000000;
+      padding: 0.3rem 0rem;
+      @include c.flex;
+      gap: 1.5rem;
+
+      a {
+          transition: all 0.5s ease;
+
+          i {
+              font-size: 1.5rem;
+              padding: 0.4rem;
+              text-shadow: 1px 1px 1px black;
+              rotate: 0;
+          }
+
+          &:hover {
+              box-shadow: 1px 1px 10px rgb(247, 247, 247);
+              scale: 1;
+          }
       }
-    }
-    p{
-      
-      font-size: 0.9rem;
-      a{
-          color: c.$secondary-color;
-          margin-left: 0.5rem;
+
+      a svg {
+          padding: 0.3rem;
       }
-    }
+
+    
+ 
   }
-  
+
+  p {
+      font-size: 0.5rem;
+
+
+      a {
+          color: c.$secondary-color;
+          margin-left: 0.3rem;
+      }
+  }
+
+
+}
+}
+

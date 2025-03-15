@@ -9,16 +9,16 @@
     width: 100%;
     position: fixed;
     background: rgba(255, 255, 255, 0.04);
-   
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4.1px);
     -webkit-backdrop-filter: blur(4.1px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.59);
-   
 
     & img {
         width: 100px;
         animation: 3s img infinite;
+        z-index: 400 ;
 
         @keyframes img {
             0% {
@@ -62,6 +62,7 @@
     & :hover {
         animation: 0s img forwards;
     }
+
 }
 
 .header-nav ul {
@@ -99,6 +100,7 @@ i {
     font-size: 1.5rem;
     padding-right: 1rem;
     visibility: hidden;
+
 }
 
 @media screen and (max-width: 768px) {
@@ -116,24 +118,18 @@ i {
         & img {
             width: 80px;
         }
-
-        .menu-toggle:checked + .menu-icon + ul {
-            top: 100%;
-            transition: all 1s ease;
-            z-index: 10;
-        }
     }
 
-    .header-nav ul {
+    .open, .close {
         @include c.flex;
         z-index: 1;
+        padding: 2rem 0 !important;
         justify-content: space-between;
         width: 100%;
         position: absolute;
-        top: -350%;
         left: 0;
         flex-direction: column;
-        background-color: rgba(c.$background-color, 0.7);
+        background-color: rgba(c.$background-color, 0.95);
         transition: all 1s ease;
         z-index: 110;
         padding: 1rem 0;
@@ -141,12 +137,42 @@ i {
         li {
             width: 90%;
             text-align: center;
-
+            margin-top: 1rem;
+        
             a {
                 color: c.$primary-color;
                 font-weight: bold;
-                letter-spacing: 1px;
+                letter-spacing: 1px; 
+          
+            }
+        
+            &:first-child {
+                margin-top: 3.5rem;
             }
         }
+    }
+    
+    .open {
+        top: 0px;
+        display: flex !important;
+        flex-direction: column !important;
+
+        gap: 0rem !important;
+    }
+
+    .close {
+        top: -600px;
+    }
+
+    .custom-hamburger {
+        z-index: 101; // Ensure it sits above the navigation
+        display: block;
+       
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .custom-hamburger {
+        display: none;  // Hide hamburger on larger screens
     }
 }
