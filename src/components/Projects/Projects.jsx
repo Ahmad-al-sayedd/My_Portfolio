@@ -18,7 +18,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="Projects" className="projects">
+    <section id="projects" className="projects">
       <motion.h2 initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         Projects
       </motion.h2>
@@ -29,7 +29,7 @@ export default function Projects() {
         slidesPerView={1} 
         loop={true} 
         freeMode={true} 
-        speed={5000} 
+        speed={6000} 
         autoplay={{
           delay: 0, // Auto slide every 3 seconds
           disableOnInteraction: false,

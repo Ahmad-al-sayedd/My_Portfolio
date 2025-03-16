@@ -17,7 +17,7 @@ import { faFacebook, faInstagram, faLinkedin, faGithub } from "@fortawesome/free
 
 const Footer = () => {
     return (
-      <footer id="Contact">
+      <footer id="contact">
         <p>&copy; 2024 Ahmad Portfolio. All rights reserved.</p>
         <section>
           

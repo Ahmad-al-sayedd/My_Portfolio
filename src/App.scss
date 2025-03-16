@@ -103,68 +103,7 @@ $background-color: #000000;
     width: $width;
     margin: $margin;
   }
-  .scrollUp {
-    background-color: red;
-    border-radius: 4px;
-    position: fixed;
-    @include flex;
-    right: 10px;
-  
-    display: inline;
-    z-index: 10;
-    bottom: 10px;
-    background-color: $secondary-color;
-    opacity: 0.1;
-    padding: 1.5rem 2rem;
-    transition: all 0.5s ease;
-    i {
-      font-size: 1.5rem;
-  
-  
-    }
-  
-    &:hover {
-      opacity: 1;
-      box-shadow: 2px 2px 12px 2px rgb(247, 247, 247);
-    }
-  
-  
-  
-  
-    &:hover i{
-      
-      animation-name:scrollUp ;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-     
-    }
-  
-    @keyframes scrollUp {
-      0%{
-          transform: translateY(0);
-      }
-      20%{
-          transform: translateY(-10px);
-      }
-      30%{
-          transform: translateY(0px);
-      }
-      40%{
-          transform: translateY(-10px);
-      }
-      50%{
-          transform: translateY(0);
-      }
-      60%{
-          transform: translateY(-10px);
-      }
-     
-      100%{
-          transform: translateY(0);
-      }
-     
-    }
-  }
+
   // main{
   //   @include flex;
   //   flex-direction: column;

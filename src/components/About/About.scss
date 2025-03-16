@@ -107,6 +107,7 @@
        
           span {
             background-color: rgb(226, 232, 226);
+            // background-color: rgb(209, 218, 209);
             display: inline-block;
             width: 15rem !important;
             height: 10px;
@@ -126,7 +127,7 @@
                 rgba(27, 214, 218, 1) 0%,
                 rgba(75, 239, 242, 1) 0%,
                 rgba(3, 230, 242, 1) 81%,
-                rgba(249, 249, 249, 1) 100%
+               
               );
               top: 0;
               left: 0;
@@ -145,6 +146,11 @@
             }
             &.progress-40::after {
               width: 40%;
+            }&.progress-80::after {
+              width: 80%;
+            }
+            &.progress-50::after {
+              width: 55%;
             }
           }
         }

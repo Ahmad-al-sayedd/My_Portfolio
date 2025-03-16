@@ -4,28 +4,29 @@ import "../About/About.scss";
 
 const About = () => {
   const ref = useRef(null);
+  
   const isInView = useInView(ref, { once: true });
 
   const skills1 = [
     { name: "HTML5", level: 70, className: "progress-70" },
     { name: "CSS3", level: 70, className: "progress-70" },
-    { name: "JavaScript", level: 50, className: "progress-50" },
-    { name: "React", level: 50, className: "progress-50" },
-    { name: "React-Router", level: 70, className: "progress-70" },
-    { name: "React-Hooks", level: 70, className: "progress-70" },
+    { name: "JavaScript", level: 80, className: "progress-80" },
+    { name: "React", level: 55, className: "progress-70" },
+    { name: "React-Router", level: 55, className: "progress-60" },
+    { name: "React-Hooks", level: 55, className: "progress-70" },
   ];
 
   const skills2 = [
     { name: "Sass", level: 60, className: "progress-60" },
     { name: "Bootstrap", level: 60, className: "progress-60" },
-    { name: "Git", level: 70, className: "progress-70" },
-    { name: "NodeJs-Express", level: 70, className: "progress-70" },
-    { name: "mongoDb", level: 70, className: "progress-70" },
+    { name: "Git", level: 60, className: "progress-70" },
+    { name: "NodeJs-Express", level: 40, className: "progress-50" },
+    { name: "mongoDb", level: 40, className: "progress-50" },
   ];
 
   return (
     <motion.section
-      id="About Me"
+      id="about"
       className="aboutMe"
       ref={ref}
       initial={{ opacity: 0, y: 50 }}

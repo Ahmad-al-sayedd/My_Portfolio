@@ -3,7 +3,7 @@ import './Home.scss'
 const Home = () => {
   return (
     
-   <section id="Home" className="header-content">
+   <section id="home" className="header-content">
         <article className="header-content-article">
           <h1>
             Web

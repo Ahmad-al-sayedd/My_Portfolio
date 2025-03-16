@@ -72,15 +72,20 @@
     gap: 1rem;
 
     li {
-        padding: 0.5rem 1rem;
+     
         transition: all 0.5s ease;
         border-radius: 5px;
         border: 1px solid transparent;
 
         a {
+            padding: 0.5rem 1rem;
+           display: block;
+           width: 100% ;
             color: c.$primary-color;
             font-weight: bold;
             letter-spacing: 1px;
+      
+
         }
 
         &:hover {
@@ -146,8 +151,8 @@ i {
           
             }
         
-            &:first-child {
-                margin-top: 3.5rem;
+            &:first-of-type{
+                margin-top: 2rem ;
             }
         }
     }
