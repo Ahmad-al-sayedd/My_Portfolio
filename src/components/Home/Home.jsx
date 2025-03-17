@@ -1,5 +1,6 @@
 import Header from '../../assets/header2.jpg'
 import './Home.scss'
+import cv from '../../assets/Ahmad_Webdev_cv.pdf'
 const Home = () => {
   return (
     
@@ -21,6 +22,9 @@ const Home = () => {
             I’m a creative web developer, passionate about crafting innovative
             solutions.
           </p>
+          <button className='cv-button' >
+          <a href={cv} download>Download CV</a>
+            </button>
         </article>
       
          <img className='homeImg' src={Header}alt="coding-img"/>

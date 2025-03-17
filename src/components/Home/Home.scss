@@ -91,6 +91,50 @@
         }
       }
     }
+    .cv-button{
+  
+        border: none;
+       
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // background-color: rgba(255, 255, 255, 0.1);
+        background-color: #ff8b06;
+        border-radius: 5px;
+        box-shadow: 1px 1px 10px gray;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 1rem;
+        transition: all 0.2s ease;
+       margin-left: 0.5rem;
+        color: white;
+        animation-name: cvButton;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 3.5s;
+
+        opacity: 0;
+    
+        a{
+          color: white;
+          padding: 0.5rem 0.7rem;
+          letter-spacing: 1px;
+        }
+        &:hover {
+          box-shadow: 1px 1px 10px rgb(247, 247, 247);
+     
+        }
+    }
+    @keyframes cvButton {
+      0% {
+        transform: translateX(-150%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
   }
 
   img {
@@ -140,6 +184,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 0rem;
+        gap: 1rem;
   
         h1 {
           font-size: 1rem;
@@ -176,7 +221,7 @@
         p {
           color: c.$primary-color;
           padding-top: 1.5rem;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           animation-name: Parg;
           animation-duration: 1.5s;
           animation-fill-mode: forwards;
@@ -184,6 +229,7 @@
           transform: translateY(200%);
           opacity: 0;
           text-align: center;
+          width: 100%;
   
           @keyframes Parg {
             0% {
@@ -196,6 +242,7 @@
             }
           }
         }
+    
       }
   
       img {
@@ -272,6 +319,9 @@
           width: 95%;
           font-size: 1rem;
         }
+        .cv-button{
+          margin: 0 auto;
+        }
       }
 
 
@@ -303,4 +353,38 @@
     }
     
      
+  }
+
+
+  @media screen and (max-width: 376px) {
+
+
+
+    .header-content {
+     
+      overflow: hidden;
+      @include c.widthMargin(95%, auto);
+      display: flex;
+      flex-direction: column;
+      align-items: center;  // Center everything in the column layout
+      justify-content: center;
+      // margin-top: ;
+  
+      .header-content-article {
+        width: 95%;
+        z-index: 1;
+        padding: 0rem 0rem 0rem 0rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 6rem;
+        gap: 1.5rem;
+  
+       
+    
+      }
+  
+   
+    }
   }
