@@ -41,6 +41,7 @@
         letter-spacing: 10px;
         text-shadow: 3px 1px 2px c.$primary-color;
         font-family: "Sofadi One", system-ui;
+
         font-weight: bold;
         font-style: normal;
         animation-fill-mode: forwards;
@@ -117,7 +118,7 @@
     
         a{
           color: white;
-          padding: 0.5rem 0.7rem;
+          padding: 0.5rem 1.5rem;
           letter-spacing: 1px;
         }
         &:hover {
@@ -276,7 +277,8 @@
       overflow: hidden;
       @include c.widthMargin(95%, auto);
       display: grid;
-      grid-template-columns: 0.2fr 0.5fr 0.2fr 1fr;
+      // grid-template-columns: 0.2fr 0.5fr 0.2fr 1fr;
+      grid-template-columns: .2fr .5fr .5fr .2fr;
       grid-template-rows: 0.7fr 1fr 0.5fr 1fr ;
   
       .header-content-article {
@@ -320,14 +322,14 @@
           font-size: 1rem;
         }
         .cv-button{
-          margin: 0 auto;
+          margin: 12px auto;
         }
       }
 
 
 
       img {
-        grid-column: 1/5;
+        grid-column: 2/4;
         grid-row: 3/4;
         width: 100%;
         // height: auto;
