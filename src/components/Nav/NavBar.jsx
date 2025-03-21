@@ -1,52 +1,78 @@
-import Logo from "../../assets/Logo.png"; // Going up two levels to access assets
-import { NavLink,useLocation } from "react-router-dom"; // Import NavLink for React Router navigation
+import Logo from "../../assets/Logo.png";
+import { Link, useLocation } from "react-router-dom";
 import "../Nav/Nav.scss";
-import { useState,useEffect } from "react";
-import Hamburger, { Squash } from "hamburger-react";
+import { useState, useEffect } from "react";
+import { Squash } from "hamburger-react";
+
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to control the menu opening and closing
-  const location = useLocation(); // Get current URL
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
  
+
+  const location = useLocation();
+console.log(location.hash);
+
+  const handleActive = (e) => {
+    const linkHash = e.target.getAttribute("href").split("/").slice(1).join();
+    setActiveLink(linkHash);
+  };
+
   useEffect(() => {
     if (location.hash) {
-      
       const section = document.querySelector(location.hash);
-    
+      console.log(section);
       
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }, [location]); // 
+  }, [location]);
+
   return (
     <nav id="navbar" className="header-nav">
       <a href="/">
         <img src={Logo} alt="logo letter" />
       </a>
-
-      {/* Apply 'open' or 'close' class to ul based on isOpen state */}
       <ul className={` ${isOpen ? "open" : "close"}`}>
-
-        <NavLink to="#home"></NavLink>
         <li>
-          <NavLink to="/#home">Home</NavLink>
+          <Link
+            className={activeLink === "#home" ? "active" : ""}
+            onClick={handleActive}
+            to="/#home"
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <NavLink to="/#about">About Me</NavLink>
+          <Link
+            className={activeLink === "#about" ? "active" : ""}
+            onClick={handleActive}
+            to="/#about"
+          >
+            About Me
+          </Link>
         </li>
         <li>
-          <NavLink to="/#projects">Projects</NavLink>
+          <Link
+            className={activeLink === "#projects" ? "active" : ""}
+            onClick={handleActive}
+            to="/#projects"
+          >
+            Projects
+          </Link>
         </li>
         <li>
-          <NavLink to="/#contact">Contact</NavLink>
+          <Link
+            className={activeLink === "#contact" ? "active" : ""}
+            onClick={handleActive}
+            to="/#contact"
+          >
+            Contact
+          </Link>
         </li>
       </ul>
-
-      {/* Hamburger
-       button to toggle the menu */}
-     <div className="custom-hamburger"
->
-      <Squash
+      <div className="custom-hamburger">
+        <Squash
           toggled={isOpen}
           toggle={setIsOpen}
           size={30}
@@ -58,9 +84,7 @@ const NavBar = () => {
           color="#ffffff"
           easing="ease-in"
         />
-     </div >
-    
-    
+      </div>
     </nav>
   );
 };
