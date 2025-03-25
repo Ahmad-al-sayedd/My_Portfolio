@@ -153,6 +153,7 @@ padding: 4rem 0;
 
 @media screen and (min-width: 480px) and (max-width: 768px) {
   .projects {
+
     h2 {
       font-size: 1.8rem;
       text-align: center;
@@ -166,6 +167,7 @@ padding: 4rem 0;
         /* background: red; */
         height: 400px;
         justify-content: none;
+
 
       figure {
         width: 100%;
@@ -199,7 +201,9 @@ padding: 4rem 0;
 
 @media screen and (max-width: 480px) {
   .projects {
-    padding: 0rem 0;
+    padding: 5rem 0;
+    height: 100vh;
+
 
     h2 {
       font-size: 1.5rem;
@@ -209,7 +213,7 @@ padding: 4rem 0;
 
     article {
       // height: 350px;
-      margin: 0 0 4rem  0;
+      margin: 3rem 0 4rem  0;
      
       flex-direction: column;
       justify-content: none;

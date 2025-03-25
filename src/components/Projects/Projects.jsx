@@ -8,7 +8,6 @@ import "./Projects.scss";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { useState } from "react";
 import { projects } from "./ProjectsData";
-import { BsTranslate } from "react-icons/bs";
 
 export default function Projects() {
   const [stylingDescriptionIndex, setStylingDescriptionIndex] = useState(null);

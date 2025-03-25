@@ -8,10 +8,13 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
+console.log(activeLink);
+
 
   useEffect(() => {
     if (location.hash) {
       const section = document.querySelector(location.hash);
+      
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
@@ -20,7 +23,8 @@ const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
+      const sections = document.querySelectorAll("[id]");
+      
       let scrollPosition = window.scrollY + 100; // Offset to detect early
 
       sections.forEach((section) => {
