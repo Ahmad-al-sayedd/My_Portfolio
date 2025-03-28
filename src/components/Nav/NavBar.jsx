@@ -11,7 +11,6 @@ const NavBar = () => {
 
   // Debug activeLink changes
   useEffect(() => {
-    console.log("Active link changed:", activeLink);
   }, [activeLink]);
 
   // Handle initial hash navigation
