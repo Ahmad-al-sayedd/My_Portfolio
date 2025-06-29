@@ -2,7 +2,7 @@ import movieAppPic from "../../assets/movie-app-pic.png";
 import TerminalPic from "../../assets/terminal-pic.png";
 import SpacePic from "../../assets/space-pic.png";
 import portfolioPic from "../../assets/portfolio-pic.png";
-
+import codeRealm from "../../assets/codeRealm.png";
 
 export const projects = [
     {
@@ -38,5 +38,13 @@ export const projects = [
         " Developed my portfolio website using React, React Hooks, and Sass to create a seamless, dynamic, and visually engaging experience. The project features a fully responsive design, ensuring that it looks great on all devices, from desktops to mobile phones. By utilizing React Hooks, I was able to manage state and handle side effects more efficiently, providing a smooth user experience. The website includes a variety of custom animations, adding life to the page elements as users interact with the site. These animations not only enhance the aesthetic appeal but also improve usability by guiding the user through different sections. With a clean and minimalistic design, the focus is on showcasing my skills, projects, and background in a user-friendly manner",
       Gitlink: "https://github.com/Ahmad-al-sayedd/My_Portfolio",
       DemoLink: 'https://my-portfolio-rp5v.onrender.com' || "Not Available" 
+    },
+    {
+      imgSrc: codeRealm,
+      title: "Code Realm",
+      altText: "Code Realm",
+      description:"Collaborated with a team of 4 to build a full-stack app for learning to code, solving exercises, and earning XP. Features include secure authentication, protected routes, and a progress tracking system. Built with React, Node.js, Express, and SQL. Contributed to both front-end and back-end development",
+      Gitlink: "https://github.com/You-Did-Bowman/Coderealm-FE",
+      DemoLink: 'https://coderealm-e7af.onrender.com/' || "Not Available" 
     },
   ];
