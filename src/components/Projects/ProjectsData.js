@@ -3,7 +3,9 @@ import TerminalPic from "../../assets/terminal-pic.png";
 import SpacePic from "../../assets/space-pic.png";
 import portfolioPic from "../../assets/portfolio-pic.png";
 import codeRealm from "../../assets/codeRealm.png";
-
+import chatApp from "../../assets/chatApp.png";
+import pflege from "../../assets/pflege.png";
+import nuts from "../../assets/nuts.png";
 export const projects = [
     {
       imgSrc: movieAppPic,
@@ -46,5 +48,32 @@ export const projects = [
       description:"Collaborated with a team of 4 to build a full-stack app for learning to code, solving exercises, and earning XP. Features include secure authentication, protected routes, and a progress tracking system. Built with React, Node.js, Express, and SQL. Contributed to both front-end and back-end development",
       Gitlink: "https://github.com/You-Did-Bowman/Coderealm-FE",
       DemoLink: 'https://coderealm-e7af.onrender.com/' || "Not Available" 
+    },
+    {
+      imgSrc: chatApp,
+      title: "Chat Application",
+      altText: "Chat App",
+      description:
+        "Developed a real-time chat application using the MERN stack (MongoDB, Express.js, React, Node.js). Implemented JWT authentication, allowing users to register, log in, and interact with others in real time.",
+      GitLink: "https://github.com/Ahmad-al-sayedd/Chat_App",
+      DemoLink: "Not Available",
+    },
+    {
+      imgSrc: pflege,
+      title: "Pflege Strategen Praxis Website",
+      altText: "Pflege Website",
+      description:
+        "Designed and developed a fully responsive healthcare practice website using Webflow and JavaScript during training. Focused on professional UI/UX, interactive features, and adaptability across devices.",
+      GitLink: "Not Available",
+      DemoLink: "https://pflege-strategen.de" || "Not Available",
+    },
+    {
+      imgSrc: nuts,
+      title: "FreshNuts E-Commerce Website",
+      altText: "FreshNuts",
+      description:
+        "Contributed to an e-commerce project using Shopify. Customized themes and improved the shopping experience with responsive layouts and optimized UI for online retail.",
+      GitLink: "Not Available",
+      DemoLink: "Not Available",
     },
   ];
